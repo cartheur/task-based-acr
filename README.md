@@ -5,11 +5,25 @@ Creates a GitHub Actions Runner in a debian11 (bullseye-slim) OS.
 
 The idea is to leverage the tools with the container registry to run tasks regarding build of applications destined for the vCloud.
 
-## Future works
+### What is here
+
+Here is an agent that will build a runner into an image that can recieve tasks when started:
+
+```docker run -it debian-runner (args**)``` 
+
+where
+
+```RUNNER_ENTERPRISE_URL```,
+```RUNNER_ORGANIZATION_URL``` or, 
+```RUNNER_REPOSITORY_URL``` needs to be specified when registering an Actions runner.
+
+In the _create_ folder there is a workflow and bicep code for a new registry.
+
+### Future works
 
 It is thought to create a distroless build, which will require a debian-bazel container. This will improve performance and reduce the footprint of the runners.
 
-## Vulnerabilities (Snyk)
+### Vulnerabilities (Snyk)
 
 | Resource Type     | Value                         |
 |-------------------|-------------------------------|
