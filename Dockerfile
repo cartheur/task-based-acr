@@ -22,7 +22,7 @@ RUN apt update \
     iputils-ping \
     jq \
     libcurl4 \
-    libicu66 \
+    libicu67 \
     libssl1.1 \
     libunwind8 \
     lsb-release \
