@@ -17,5 +17,5 @@ jobs:
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
       - run: |
-          docker build . -t ${{ secrets.ACR_URL }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} -f dockeragent/Dockerfile
+          docker build . -t ${{ secrets.ACR_URL }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} -f agent/Dockerfile
           docker push ${{ secrets.ACR_URL }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
