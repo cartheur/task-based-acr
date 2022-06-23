@@ -37,17 +37,17 @@ RUN wget -q https://packages.microsoft.com/config/debian/11/packages-microsoft-p
 
 RUN dpkg -i packages-microsoft-prod.deb
 
-RUN apt-get update
+RUN apt update
 
-RUN apt-get install -y --no-install-recommends powershell
+RUN apt install -y --no-install-recommends powershell
 
 RUN curl -LsS https://aka.ms/InstallAzureCLIDeb | bash \
   && rm -rf /var/lib/apt/lists/*
 
 RUN pwsh -Command "Install-Module -Name 'Az' -Force -Scope 'AllUsers'"
 
-RUN apt-get update
-RUN apt-get upgrade
+RUN apt update
+RUN apt upgrade
 
 # Create a user for running actions
 RUN useradd -m actions
