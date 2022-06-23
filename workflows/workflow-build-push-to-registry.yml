@@ -1,4 +1,4 @@
-name: Build a docker image and push to the ACR
+name: Build a docker image and push to the registry
 
 on: [workflow_dispatch]
 
