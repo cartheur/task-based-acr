@@ -7,7 +7,7 @@ The idea is to leverage the tools with the container registry to run tasks regar
 
 ### What is here
 
-Here is an agent that will build a runner into an image that can recieve tasks when started:
+Here is a docker agent that will build a runner with Az integration into an image that can recieve tasks when started:
 
 ```docker run -it debian-runner (args**)``` 
 
