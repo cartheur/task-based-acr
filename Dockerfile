@@ -1,4 +1,4 @@
-FROM debian/bullseye-slim:latest
+FROM debian:bullseye-slim
 
 ARG GH_RUNNER_VERSION=2.277.1
 
@@ -11,9 +11,9 @@ ENV AGENT_TOOLS_DIRECTORY=/opt/hostedtoolcache
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Update & Install common tools and packages
-RUN apt-get update \
-    && apt-get upgrade -y --no-install-recommends \
-    && apt-get install -y --no-install-recommends \
+RUN apt update \
+    && apt upgrade -y --no-install-recommends \
+    && apt install -y --no-install-recommends \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -23,7 +23,7 @@ RUN apt-get update \
     jq \
     libcurl4 \
     libicu66 \
-    libssl1.0 \
+    libssl1.1 \
     libunwind8 \
     lsb-release \
     netcat \
@@ -63,7 +63,7 @@ RUN curl -L -O https://github.com/actions/runner/releases/download/v${GH_RUNNER_
 # Copy out the runsvc.sh script to the root directory for running the service
 RUN cp bin/runsvc.sh . && chmod +x ./runsvc.sh
 
-COPY dockeragent/entrypoint.sh .
+COPY agent/entrypoint.sh .
 RUN chmod +x ./entrypoint.sh
 
 # Now that the OS has been updated to include required packages, update ownership and then switch to actions user
