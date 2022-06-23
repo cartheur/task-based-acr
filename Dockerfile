@@ -10,7 +10,7 @@ ENV AGENT_TOOLS_DIRECTORY=/opt/hostedtoolcache
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Update & Install common tools and packages
+# Update and install required packages
 RUN apt update \
     && apt upgrade -y --no-install-recommends \
     && apt install -y --no-install-recommends \
@@ -32,7 +32,7 @@ RUN apt update \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
-#install dot net core and az cli
+# Install dotnet core and az cli
 RUN wget -q https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb
 
 RUN dpkg -i packages-microsoft-prod.deb
