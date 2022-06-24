@@ -11,7 +11,13 @@ After cloning the repo, run the command in the folder containing the ```Dockerfi
 
 ```docker build -t debian-runner .```
 
-and it will build the image and place it your local-machine.
+and it will build the image and place it your local-machine. You can find it by its name when running
+
+```PS ..\task-based-acr> docker images```
+
+| REPOSITORY    |  TAG   |   IMAGE ID   |    CREATED     |  SIZE  |
+|---------------|--------|--------------|----------------|--------|
+| debian-runner | latest | e88a6a7111b9 | 21 minutes ago | 2.27GB |
 
 ### Running the image
 
