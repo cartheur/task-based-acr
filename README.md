@@ -5,9 +5,17 @@ Creates a GitHub Actions Runner in a debian11 (bullseye-slim) OS.
 
 The idea is to leverage the tools with the container registry to run tasks regarding build of applications destined for the vCloud.
 
-### What is here
+### Build the image (to your local docker)
 
-Here is a docker agent that will build a runner with Az integration into an image that can recieve tasks when started:
+After cloning the repo, run the command in the folder containing the ```Dockerfile```, a VSCode terminal is recommended:
+
+```docker build -t debian-runner .```
+
+and it will build the image and place it your local-machine.
+
+### Running the image
+
+The image is a docker agent with Az integration that can recieve tasks when started:
 
 ```docker run -it debian-runner (args**)``` 
 
@@ -19,11 +27,13 @@ where
 
 In the _create_ folder there is a workflow and bicep code for a new registry.
 
-### Future works
+### Image size
 
-It is thought to create a distroless build, which will require a debian-bazel container. This will improve performance and reduce the footprint of the runners.
+The image size is 2.27GB (as a Github Actions Runner). 
 
-### Vulnerabilities (Snyk)
+### Image vulnerabilities (via Snyk scan)
+
+```docker scan debian-runner``` will produce the following report:
 
 | Resource Type     | Value                         |
 |-------------------|-------------------------------|
