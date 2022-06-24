@@ -9,7 +9,7 @@ permissions:
 
 env:
   AZURE_RESOURCEGROUP_NAME: aks-tst-rg
-  BICEP_FILE: ./deploy/acr.bicep
+  BICEP_FILE: ./create/acr.bicep
 
 jobs:
   lint: 
